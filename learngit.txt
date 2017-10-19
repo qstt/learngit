@@ -1,0 +1,75 @@
+git学习笔记
+
+1.在Windows上安装Git
+	msysgit是Windows版的Git，从https://git-for-windows.github.io下载
+	安装完成后，在开始菜单里找到“Git”->“Git Bash”
+	
+	安装完成后，还需要最后一步设置，在命令行输入：
+	$ git config --global user.name "Your Name"            //Your Name   是自己使用的名字
+    $ git config --global user.email "email@example.com"   //email@example.com   是自己使用的邮箱
+	
+2.创建版本库
+	1）选择一个合适的地方，创建一个空目录：   //为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文。
+	$ mkdir learngit     
+	2）第二步，通过git init命令把这个目录变成Git可以管理的仓库：
+	$ git init
+	
+3.添加文件到Git仓库	
+	$ git add readme.txt   //把文件提交到仓库   因为commit可以一次提交很多文件，所以你可以多次add不同的文件
+	$ git commit -m "wrote a readme file"   //把文件提交到仓库
+	
+	$ git status   //查看仓库当前的状态
+	$ git diff   //查看具体修改了什么内容
+	
+4.版本回退
+	$ git log   //查看历史记录
+	$ git reset --hard HEAD^   //回退到上一个版本
+	$ git reset --hard HEAD~100   //回退当上100个版本
+	$ git reflog   //记录每一次命令
+	
+	HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+	穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+	要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本
+	
+	$ gitk   //可以看到版本树
+		如果用gitk显示的文件内容是乱码   可以执行下面的命令后   再次执行gitk
+		$ git config --global gui.encoding utf-8
+		
+5.工作区和暂存区不是很明白
+
+6.$ git diff HEAD -- readme.txt   //可以查看工作区和版本库里面最新版本的区别   readme.txt文本文档
+  $ git diff    //是工作区(work dict)和暂存区(stage)的比较
+  $ git diff --cached    //是暂存区(stage)和分支(master)的比较
+
+7.撤销修改
+	$ git checkout -- readme.txt   
+		//意思就是，把readme.txt文件在工作区的修改全部撤销,这里有两种情况：
+		一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+		一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+		总之，就是让这个文件回到最近一次git commit或git add时的状态。
+	$ git reset HEAD readme.txt   //可以把暂存区的修改撤销掉（unstage），重新放回工作区
+
+8.删除文件
+	$ git rm test.txt
+	$ git commit -m "remove test.txt"
+
+9.远程仓库
+	$ git push origin master   //把本地master分支的最新修改推送至GitHub
+
+111111111111111
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
