@@ -63,8 +63,10 @@ git学习笔记
 	Setting —— 点击Delete this repository(在最下面) —— 在弹出的窗口中输入你要删除的仓库名字
 
 11.从远程仓库克隆
-	
-	
+	$ git clone https://github.com/qstt/learngit.git 或 $ git clone git@github.com:michaelliao/gitskills.git
+
+12.分支管理
+	1）创建与合并分支
 	
 
 
