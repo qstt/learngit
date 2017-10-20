@@ -99,6 +99,10 @@ git学习笔记
 		建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
 		从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
 		
+		
+		先把GitHub上的仓库克隆下来，克隆下来的仓库只有master分支，需要自己在本地创建dev分支，然后从GitHub上拉去dev分支上的内容
+		不要在dev分支上直接修改   在dev分支下的dev-sce分支上修改、提交但是不推送到GitHub上，然后切换到dev分支上，dev分支与dev-sce分支
+		进行合并，然后将dev分支上的内容推送到GitHub上的dev分支中
 
 
 
