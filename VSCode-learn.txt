@@ -1,0 +1,3 @@
+VS Code学习笔记
+
+开发期启动应该用 npm run dev  即  egg-bin dev，关闭的时候直接 ctrl + c 即可。
